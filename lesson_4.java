@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class lesson_4 {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        // Scanner sc = new Scanner(System.in);
         ArrayList<String[]> name = new ArrayList<>();
         ArrayList<String> sex = new ArrayList<>();
         ArrayList<Integer> age = new ArrayList<>();
@@ -13,6 +13,7 @@ public class lesson_4 {
 
         boolean lr = true;
         while (lr) {
+            Scanner sc = new Scanner(System.in);
             System.out.println("Enter user name (Ivanov Ivan Ivanovich): ");
             name.add(sc.nextLine().split(" "));
 
@@ -20,9 +21,7 @@ public class lesson_4 {
             sex.add(sc.nextLine());
 
             System.out.println("Enter user age: ");
-            // age.add(Integer.parseInt(null, sc.nextInt()));
-            age.add(sc.nextInt());
-
+            age.add(Integer.parseInt(sc.nextLine()));
             id.add(name.size() - 1);
 
             System.out.println("User name: " +
@@ -33,9 +32,9 @@ public class lesson_4 {
         
             System.out.println("New user? Y/N ");
             
-            if (sc.nextLine().contains("N"))       
-                lr = false;
+            if (sc.nextLine().contains("N")) lr = false;
         }
+        
         id.forEach(n -> System.out.println("User name: " +
                 name.get(n)[0] + " " +
                 name.get(n)[1].toUpperCase().charAt(0) + "." +
